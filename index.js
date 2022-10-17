@@ -1,8 +1,3 @@
-const toDoForm = document.querySelector(".toDoForm");
-const toDoInput = toDoForm.querySelector("input");
-const toDos = document.querySelector(".toDos");
-
-const TODOLIST = "toDoList";
 let toDoList = [];
 
 function saveToDo(toDo) {
@@ -11,7 +6,7 @@ function saveToDo(toDo) {
     id: toDoList.length + 1,
   };
   toDoList.push(toDoObj);
-  localStorage.setItem(TODOLIST, JSON.stringify(toDoList));
+  localStorage.setItem("toDoList", JSON.stringify(toDoList));
 }
 
 function paintToDo(toDo) {
@@ -19,19 +14,21 @@ function paintToDo(toDo) {
   const span = document.createElement("span");
   span.innerHTML = toDo;
   li.appendChild(span);
-  toDos.appendChild(li);
+  document.querySelector(".toDos").appendChild(li);
 }
 
 function createToDo(event) {
+  // submit시 새로고침 방지
   event.preventDefault();
-  const toDo = toDoInput.value;
+  const toDo = document.querySelector("form.toDoForm > input").value;
+  console.log(toDo);
   paintToDo(toDo);
   saveToDo(toDo);
-  toDoInput.value = "";
+  document.querySelector("form.toDoForm > input").value = "";
 }
 
 function loadToDoList() {
-  const loadedToDoList = localStorage.getItem(TODOLIST);
+  const loadedToDoList = localStorage.getItem("toDoList");
   if (loadedToDoList !== null) {
     const parsedToDoList = JSON.parse(loadedToDoList);
     for (let toDo of parsedToDoList) {
@@ -42,8 +39,11 @@ function loadToDoList() {
   }
 }
 
+function deleteToDo() {}
+
 function init() {
   loadToDoList();
-  toDoForm.addEventListener("submit", createToDo);
+  document.querySelector(".toDoForm").addEventListener("submit", createToDo);
 }
+
 init();

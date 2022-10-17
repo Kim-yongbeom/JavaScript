@@ -1,0 +1,12 @@
+body{
+    background-color: #F3F3F3;
+    height: 100vh;
+    position: relative;
+}
+
+.body{
+    position: absolute;
+    width: 50vw;
+    height: 50vh;
+    background-color: white;
+}
