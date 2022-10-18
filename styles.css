@@ -6,7 +6,8 @@ body{
 
 .body{
     position: absolute;
+    left: 25%;
+    top: 10%;
     width: 50vw;
-    height: 50vh;
     background-color: white;
 }
