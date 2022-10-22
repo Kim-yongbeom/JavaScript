@@ -1,13 +1,14 @@
 body{
-    background-color: #F3F3F3;
-    height: 100vh;
-    position: relative;
+    background-color: #434343;
 }
 
 .body{
-    position: absolute;
-    left: 25%;
-    top: 10%;
+    margin: auto;
     width: 50vw;
-    background-color: white;
+    border-radius: 10px;
+    background-color: #E3E3E3;
+}
+
+.toDoForm{
+    margin: 10px;
 }
