@@ -9,6 +9,11 @@ body{
     background-color: #E3E3E3;
 }
 
-.toDoForm{
-    margin: 10px;
+.form{
+    padding: 5%;
+}
+
+.input{
+    width: 80%;
+    height: 30px;
 }
