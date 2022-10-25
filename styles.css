@@ -28,3 +28,11 @@ body{
 .addButton{
     width: 15%;
 }
+
+.toDos{
+    padding-left: 30px;
+}
+
+.toDos > li{
+    margin-bottom: 5px;
+}

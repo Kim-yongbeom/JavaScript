@@ -12,14 +12,17 @@ function saveToDo(toDo) {
 function paintToDo(toDo) {
   const li = document.createElement("li");
   const span = document.createElement("span");
+  const deleteButton = document.createElement("button");
   span.innerHTML = toDo;
   li.appendChild(span);
   document.querySelector(".toDos").appendChild(li);
+  li.classList.add('list')
+  document.querySelector(".list").appendChild(deleteButton);
 }
 
 function createToDo(event) {
   // submit시 새로고침 방지
-  event.preventDefault();
+  // event.preventDefault();
   const toDo = document.querySelector("form.toDoForm > input").value;
   console.log(toDo);
   paintToDo(toDo);
