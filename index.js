@@ -17,7 +17,7 @@ function paintToDo(toDo) {
   li.appendChild(span);
   document.querySelector(".toDos").appendChild(li);
   li.classList.add('list')
-  document.querySelector(".list").appendChild(deleteButton);
+  document.querySelector(".toDos").appendChild(deleteButton)
 }
 
 function createToDo(event) {

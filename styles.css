@@ -31,6 +31,7 @@ body{
 
 .toDos{
     padding-left: 30px;
+    display: grid;
 }
 
 .toDos > li{
