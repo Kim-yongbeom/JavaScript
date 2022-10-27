@@ -29,11 +29,15 @@ body{
     width: 15%;
 }
 
+#lists{
+    background-color: #D3D3D3;
+    border-radius: 5px;
+}
+
 .toDos{
     padding-left: 30px;
-    display: grid;
 }
 
 .toDos > li{
-    margin-bottom: 5px;
+    margin: 10px 0;
 }

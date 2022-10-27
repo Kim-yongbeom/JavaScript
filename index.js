@@ -15,9 +15,9 @@ function paintToDo(toDo) {
   const deleteButton = document.createElement("button");
   span.innerHTML = toDo;
   li.appendChild(span);
-  document.querySelector(".toDos").appendChild(li);
+  document.querySelector("#lists").appendChild(li);
   li.classList.add('list')
-  document.querySelector(".toDos").appendChild(deleteButton)
+  document.querySelector("#lists").appendChild(deleteButton)
 }
 
 function createToDo(event) {
