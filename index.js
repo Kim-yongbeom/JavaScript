@@ -9,25 +9,37 @@ function saveToDo(toDo) {
   localStorage.setItem("toDoList", JSON.stringify(toDoList));
 }
 
-function paintToDo(toDo) {
-  const li = document.createElement("li");
-  const span = document.createElement("span");
-  const deleteButton = document.createElement("button");
-  span.innerHTML = toDo;
-  li.appendChild(span);
-  document.querySelector("#lists").appendChild(li);
-  li.classList.add('list')
-  document.querySelector("#lists").appendChild(deleteButton)
-}
-
 function createToDo(event) {
   // submit시 새로고침 방지
-  // event.preventDefault();
+  event.preventDefault();
   const toDo = document.querySelector("form.toDoForm > input").value;
   console.log(toDo);
   paintToDo(toDo);
   saveToDo(toDo);
   document.querySelector("form.toDoForm > input").value = "";
+}
+
+function paintToDo(toDo) {
+  const lists = document.querySelector("#lists")
+  const list = document.createElement("div");
+  const input = document.createElement("input");
+  const activeDiv = document.createElement("div");
+  const retextButton = document.createElement("button")
+  const deleteButton = document.createElement("button");
+
+  input.placeholder = toDo;
+  retextButton.innerHTML = "수정";
+  deleteButton.innerHTML = "삭제";
+
+  activeDiv.appendChild(retextButton);
+  activeDiv.appendChild(deleteButton);
+  list.appendChild(input);
+  list.appendChild(activeDiv);
+  lists.appendChild(list);
+
+  list.classList.add('list');
+  retextButton.classList.add('activeButton');
+  deleteButton.classList.add('activeButton');
 }
 
 function loadToDoList() {

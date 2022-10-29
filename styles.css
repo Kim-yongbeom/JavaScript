@@ -1,5 +1,5 @@
 body{
-    background-color: #434343;
+    background-color: #abc5dd;
 }
 
 .body{
@@ -7,6 +7,7 @@ body{
     width: 50vw;
     border-radius: 10px;
     background-color: #E3E3E3;
+
 }
 
 .form{
@@ -27,17 +28,47 @@ body{
 
 .addButton{
     width: 15%;
+    background-color: #abc5dd;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.addButton:hover{
+    background-color: red;
 }
 
 #lists{
-    background-color: #D3D3D3;
-    border-radius: 5px;
+    background-color: #E3E3E3;
 }
 
-.toDos{
-    padding-left: 30px;
+.list{
+    display: flex;
+    margin-top: 15px;
+    padding: 0 0 0 10px;
+    background-color: white;
 }
 
-.toDos > li{
-    margin: 10px 0;
+.list > input{
+    border: none;
+    width: 70%;
+    height: 40px;
+    font-size: 16px;
+    outline: none;
+}
+
+.list > div{
+    line-height: 40px;
+}
+
+.activeButton{
+    /* 상위 요소 색 따라감 */
+    background: inherit;
+    border: none;
+    color: #5898d3;
+    cursor: pointer;
+}
+
+.activeButton:hover{
+    color: red;
 }
