@@ -28,8 +28,8 @@ function paintToDo(toDo) {
   const deleteButton = document.createElement("button");
 
   input.placeholder = toDo;
-  retextButton.innerHTML = "수정";
-  deleteButton.innerHTML = "삭제";
+  retextButton.innerText = "수정";
+  deleteButton.innerText = "삭제";
 
   activeDiv.appendChild(retextButton);
   activeDiv.appendChild(deleteButton);
@@ -58,7 +58,8 @@ function loadToDoList() {
 
     for(let i=0; i<a.length; i++){
       a[i].addEventListener('click', () => {
-        reTextToDo()
+        reTextToDo(i)
+        a[i].innerText = "저장"
       })
     }
   }
@@ -66,8 +67,10 @@ function loadToDoList() {
 
 
 
-function reTextToDo() {
-  console.log(1)
+function reTextToDo(index) {
+  // console.log(index)
+  const b = document.querySelectorAll('.list > input')
+  b[index].disabled = false;
 }
 
 function deleteToDo() {}
