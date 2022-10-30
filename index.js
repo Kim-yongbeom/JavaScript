@@ -1,4 +1,5 @@
 let toDoList = [];
+const loadedToDoList = localStorage.getItem("toDoList");
 
 function saveToDo(toDo) {
   const toDoObj = {
@@ -11,9 +12,8 @@ function saveToDo(toDo) {
 
 function createToDo(event) {
   // submit시 새로고침 방지
-  event.preventDefault();
+  // event.preventDefault();
   const toDo = document.querySelector("form.toDoForm > input").value;
-  console.log(toDo);
   paintToDo(toDo);
   saveToDo(toDo);
   document.querySelector("form.toDoForm > input").value = "";
@@ -33,17 +33,19 @@ function paintToDo(toDo) {
 
   activeDiv.appendChild(retextButton);
   activeDiv.appendChild(deleteButton);
+
   list.appendChild(input);
   list.appendChild(activeDiv);
   lists.appendChild(list);
 
   list.classList.add('list');
-  retextButton.classList.add('activeButton');
-  deleteButton.classList.add('activeButton');
+  retextButton.classList.add('retextButton');
+  deleteButton.classList.add('deleteButton');
+
+  input.disabled = true;
 }
 
 function loadToDoList() {
-  const loadedToDoList = localStorage.getItem("toDoList");
   if (loadedToDoList !== null) {
     const parsedToDoList = JSON.parse(loadedToDoList);
     for (let toDo of parsedToDoList) {
@@ -51,7 +53,21 @@ function loadToDoList() {
       paintToDo(text);
       saveToDo(text);
     }
+
+    const a = document.querySelectorAll('.retextButton');
+
+    for(let i=0; i<a.length; i++){
+      a[i].addEventListener('click', () => {
+        reTextToDo()
+      })
+    }
   }
+}
+
+
+
+function reTextToDo() {
+  console.log(1)
 }
 
 function deleteToDo() {}

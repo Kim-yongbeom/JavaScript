@@ -51,7 +51,7 @@ body{
 
 .list > input{
     border: none;
-    width: 70%;
+    width: 80%;
     height: 40px;
     font-size: 16px;
     outline: none;
@@ -61,7 +61,7 @@ body{
     line-height: 40px;
 }
 
-.activeButton{
+.retextButton{
     /* 상위 요소 색 따라감 */
     background: inherit;
     border: none;
@@ -69,6 +69,18 @@ body{
     cursor: pointer;
 }
 
-.activeButton:hover{
+.retextButton:hover{
+    color: red;
+}
+
+.deleteButton{
+    /* 상위 요소 색 따라감 */
+    background: inherit;
+    border: none;
+    color: #5898d3;
+    cursor: pointer;
+}
+
+.deleteButton:hover{
     color: red;
 }
