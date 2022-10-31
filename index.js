@@ -1,24 +1,6 @@
 let toDoList = [];
 const loadedToDoList = localStorage.getItem("toDoList");
 
-function saveToDo(toDo) {
-  const toDoObj = {
-    text: toDo,
-    id: toDoList.length + 1,
-  };
-  toDoList.push(toDoObj);
-  localStorage.setItem("toDoList", JSON.stringify(toDoList));
-}
-
-function createToDo(event) {
-  // submit시 새로고침 방지
-  // event.preventDefault();
-  const toDo = document.querySelector("form.toDoForm > input").value;
-  paintToDo(toDo);
-  saveToDo(toDo);
-  document.querySelector("form.toDoForm > input").value = "";
-}
-
 function paintToDo(toDo) {
   const lists = document.querySelector("#lists")
   const list = document.createElement("div");
@@ -45,6 +27,25 @@ function paintToDo(toDo) {
   input.disabled = true;
 }
 
+function saveToDo(toDo) {
+  const toDoObj = {
+    text: toDo,
+  };
+  toDoList.push(toDoObj);
+  localStorage.setItem("toDoList", JSON.stringify(toDoList));
+}
+
+function createToDo(event) {
+  // submit시 새로고침 방지
+  // event.preventDefault();
+  const toDo = document.querySelector("form.toDoForm > input").value;
+  paintToDo(toDo);
+  saveToDo(toDo);
+  document.querySelector("form.toDoForm > input").value = "";
+}
+
+function deleteToDo() {}
+
 function loadToDoList() {
   if (loadedToDoList !== null) {
     const parsedToDoList = JSON.parse(loadedToDoList);
@@ -54,26 +55,27 @@ function loadToDoList() {
       saveToDo(text);
     }
 
+    // 텍스트 수정
     const a = document.querySelectorAll('.retextButton');
+    const b = document.querySelectorAll('.list > input')
 
     for(let i=0; i<a.length; i++){
       a[i].addEventListener('click', () => {
-        reTextToDo(i)
-        a[i].innerText = "저장"
+        if(a[i].innerText === "수정"){
+          a[i].innerText = "저장"
+          b[i].disabled = false;
+          b[i].focus();
+        } else{
+          a[i].innerText = "수정"
+          b[i].disabled = true;
+          parsedToDoList.splice(i, 1, { text: b[i].value });
+          localStorage.setItem("toDoList", JSON.stringify(parsedToDoList));
+        }
       })
     }
   }
 }
 
-
-
-function reTextToDo(index) {
-  // console.log(index)
-  const b = document.querySelectorAll('.list > input')
-  b[index].disabled = false;
-}
-
-function deleteToDo() {}
 
 function init() {
   loadToDoList();
