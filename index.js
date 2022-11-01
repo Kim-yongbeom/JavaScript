@@ -44,8 +44,6 @@ function createToDo(event) {
   document.querySelector("form.toDoForm > input").value = "";
 }
 
-function deleteToDo() {}
-
 function loadToDoList() {
   if (loadedToDoList !== null) {
     const parsedToDoList = JSON.parse(loadedToDoList);
@@ -59,7 +57,11 @@ function loadToDoList() {
     const a = document.querySelectorAll('.retextButton');
     const b = document.querySelectorAll('.list > input')
 
+    // 텍스트 삭제
+    const c = document.querySelectorAll('.deleteButton');
+
     for(let i=0; i<a.length; i++){
+      // 수정
       a[i].addEventListener('click', () => {
         if(a[i].innerText === "수정"){
           a[i].innerText = "저장"
@@ -70,7 +72,15 @@ function loadToDoList() {
           b[i].disabled = true;
           parsedToDoList.splice(i, 1, { text: b[i].value });
           localStorage.setItem("toDoList", JSON.stringify(parsedToDoList));
+          location.reload();
         }
+      })
+
+      // 삭제
+      c[i].addEventListener('click', () => {
+        parsedToDoList.splice(i, 1)
+        localStorage.setItem('toDoList', JSON.stringify(parsedToDoList));
+        location.reload();
       })
     }
   }
