@@ -29,4 +29,6 @@
 
 ## 웹 브라우저 동작 원리
 
-## 웹 스토리지
+## 웹 스토리지(localStorage, sessionStorage)
+
+## 웹 스토리지와 쿠키 차이점
