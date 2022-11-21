@@ -43,5 +43,14 @@ Repaint(그리기): Reflow가 발생하면 Repaint도 발생, 레이아웃에 �
 ```
 
 ## 웹 스토리지(localStorage, sessionStorage)
+```
+SessionStorage는 데이터가 지속적으로 보관되지 않는다.
+현재 페이지가 브라우징되고 있는 브라우저 컨텍스트 내에서만 데이터가 유지된다(브라우저를 종료하면 데이터 삭제).
+
+LocalStorage는 브라우저를 종료해도 데이터는 보관되어 다음번 접속에도 그 데이터를 사용할 수 있다.
+```
 
 ## 웹 스토리지와 쿠키 차이점
+```
+https://velog.io/@hs0217/%EC%BF%A0%ED%82%A4-%EB%A1%9C%EC%BB%AC-%EC%8A%A4%ED%86%A0%EB%A6%AC%EC%A7%80-%EC%84%B8%EC%85%98-%EC%8A%A4%ED%86%A0%EB%A6%AC%EC%A7%80
+```
