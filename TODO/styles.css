@@ -45,6 +45,8 @@ body{
 .list{
     display: flex;
     margin-top: 15px;
+    /* margin 병합 */
+    /* margin-bottom: 30px; */
     padding: 0 0 0 10px;
     background-color: white;
 }
