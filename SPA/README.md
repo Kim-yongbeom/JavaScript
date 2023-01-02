@@ -45,4 +45,7 @@ SPA가 등장하기 전 웹 애플리케이션을 구성하던 방식인 서버 
 
 ## Next.js
 
+```
+https://github.com/Kim-yongbeom/Next.js
+```
 - React(SPA)를 사용할 때 쉽게 SSR을 편하게 해준다.
