@@ -1,5 +1,6 @@
 let toDoList = [];
 const loadedToDoList = localStorage.getItem("toDoList");
+let i = 0;
 
 function paintToDo(toDo) {
   const lists = document.querySelector("#lists")
