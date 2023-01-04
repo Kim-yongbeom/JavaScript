@@ -1,13 +1,11 @@
 let toDoList = [];
 const loadedToDoList = localStorage.getItem("toDoList");
-let i = 0;
 
 function paintToDo(toDo) {
-  const lists = document.querySelector("#lists")
   const list = document.createElement("div");
   const input = document.createElement("input");
   const activeDiv = document.createElement("div");
-  const retextButton = document.createElement("button")
+  const retextButton = document.createElement("button");
   const deleteButton = document.createElement("button");
 
   input.placeholder = toDo;
@@ -21,9 +19,9 @@ function paintToDo(toDo) {
   list.appendChild(activeDiv);
   lists.appendChild(list);
 
-  list.classList.add('list');
-  retextButton.classList.add('retextButton');
-  deleteButton.classList.add('deleteButton');
+  list.classList.add("list");
+  retextButton.classList.add("retextButton");
+  deleteButton.classList.add("deleteButton");
 
   input.disabled = true;
 }
@@ -37,16 +35,17 @@ function saveToDo(toDo) {
 }
 
 function createToDo(event) {
-  // submit시 새로고침 방지
   // event.preventDefault();
   const toDo = document.querySelector("form.toDoForm > input").value;
+  // form 태그안 input 값
+  console.log(toDo);
   paintToDo(toDo);
   saveToDo(toDo);
   document.querySelector("form.toDoForm > input").value = "";
 }
 
 function loadToDoList() {
-  if (loadedToDoList !== null) {
+  if (loadedToDoList.length !== 0) {
     const parsedToDoList = JSON.parse(loadedToDoList);
     for (let toDo of parsedToDoList) {
       const { text } = toDo;
@@ -55,38 +54,37 @@ function loadToDoList() {
     }
 
     // 텍스트 수정
-    const a = document.querySelectorAll('.retextButton');
-    const b = document.querySelectorAll('.list > input')
+    const a = document.querySelectorAll(".retextButton");
+    const b = document.querySelectorAll(".list > input");
 
     // 텍스트 삭제
-    const c = document.querySelectorAll('.deleteButton');
+    const c = document.querySelectorAll(".deleteButton");
 
-    for(let i=0; i<a.length; i++){
+    for (let i = 0; i < a.length; i++) {
       // 수정
-      a[i].addEventListener('click', () => {
-        if(a[i].innerText === "수정"){
-          a[i].innerText = "저장"
+      a[i].addEventListener("click", () => {
+        if (a[i].innerText === "수정") {
+          a[i].innerText = "저장";
           b[i].disabled = false;
           b[i].focus();
-        } else{
-          a[i].innerText = "수정"
+        } else {
+          a[i].innerText = "수정";
           b[i].disabled = true;
           parsedToDoList.splice(i, 1, { text: b[i].value });
           localStorage.setItem("toDoList", JSON.stringify(parsedToDoList));
           location.reload();
         }
-      })
+      });
 
       // 삭제
-      c[i].addEventListener('click', () => {
-        parsedToDoList.splice(i, 1)
-        localStorage.setItem('toDoList', JSON.stringify(parsedToDoList));
+      c[i].addEventListener("click", () => {
+        parsedToDoList.splice(i, 1);
+        localStorage.setItem("toDoList", JSON.stringify(parsedToDoList));
         location.reload();
-      })
+      });
     }
   }
 }
-
 
 function init() {
   loadToDoList();
