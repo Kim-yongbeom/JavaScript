@@ -56,7 +56,8 @@ LocalStorage는 브라우저를 종료해도 데이터는 보관되어 다음번
 ```
 https://velog.io/@hs0217/%EC%BF%A0%ED%82%A4-%EB%A1%9C%EC%BB%AC-%EC%8A%A4%ED%86%A0%EB%A6%AC%EC%A7%80-%EC%84%B8%EC%85%98-%EC%8A%A4%ED%86%A0%EB%A6%AC%EC%A7%80
 ```
-## JavaScript(변수) 메모리 구조, 데이터 저장/참조 원리
+## JavaScript(변수) 메모리 구조, 데이터 저장/참조 원리 (참고할 블로그)
 ```
 https://curryyou.tistory.com/275
+https://www.howdy-mj.me/redux/right-way-to-update-state
 ```
