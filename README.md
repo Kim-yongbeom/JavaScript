@@ -61,3 +61,6 @@ https://velog.io/@hs0217/%EC%BF%A0%ED%82%A4-%EB%A1%9C%EC%BB%AC-%EC%8A%A4%ED%86%A
 https://curryyou.tistory.com/275
 https://www.howdy-mj.me/redux/right-way-to-update-state
 ```
+
+## JavaScript 디자인 패턴 (싱글톤 패턴 공부하기 - 클래스형 사용?)
+## JavaScript 객체지향, 함수형 차이
