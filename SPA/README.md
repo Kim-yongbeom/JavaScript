@@ -15,7 +15,7 @@ SPA가 등장하기 전 웹 애플리케이션을 구성하던 방식인 서버 
 ## SPA vs MPA
 
 - SPA(Single Page Application)는 한 개(Single)의 Page로 구성된 Application이다.
-- MPA(Multiple Page Application)는 여러 개(Single)의 Page로 구성된 Application이다.
+- MPA(Multiple Page Application)는 여러 개(Multiple)의 Page로 구성된 Application이다.
 - MPA는 새로운 페이지를 요청할 때마다 정적 리소스가 다운로드된다. 매번 전체 페이지가 다시 렌더링 된다.
 - 반면 SPA는 웹 에플리케이션에 필요한 모든 정적 리소스를 최초 한 번에 다운로드한다.
 - 그 이후 새로운 페이지 요청이 있을 때, 페이지 갱신에 필요한 데이터만 전달 받아서 페이지를 갱신한다.
